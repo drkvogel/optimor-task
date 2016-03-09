@@ -2,12 +2,12 @@ Optimor Python Developer Interview Task  
 
 Background: A common task we perform is updating our knowledge­base of networks’ international calling costs (the cost per minute of calling a foreign country from the UK). These costs are typically based on country zones, although a list of zones and constituent countries is not always directly  available, so we may have to query the network’s website directly to obtain these results.  
 
-Task: Install and use Selenium(1) (or another web crawling library for Python, if you feel another is more suitable) to scrape the following URL(2) for the price of calling a landline in the countries listed in(3) from an O2 Pay Monthly contract. Print the answers. 
+Task: Install and use Selenium(1) (or another web crawling library for Python, if you feel another is more suitable) to scrape the following URL(2)for the price of calling a landline in the countries listed in(3) from an O2 Pay Monthly contract. Print the answers. 
 
-We’re looking for good, readable  Pythonic code, not just a hacked­together script.    
+We’re looking for good, readable Pythonic code, not just a hacked ­together script.    
 
 1. http://selenium.googlecode.com/svn/trunk/docs/api/py/index.html#   
-2. http://international.o2.co.uk/internationaltariffs/calling_abroad_from_uk   
+2. http://international.o2.co.uk/internationaltariffs/calling_abroad_from_uk
 3. Canada, Germany, Iceland, Pakistan, Singapore, South Africa  
 
 Tips: 
