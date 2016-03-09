@@ -53,12 +53,12 @@ def get_o2_landline_tariff(country, browser_name):
 
 countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
 
-for country in range(countries):
+for country in countries:
     try:
         print "O2's landline tariff for" + country + " is: " + get_o2_landline_tariff(country, 'Firefox')
-    except NoSuchElementException:
+    except NoSuchElementException as ex:
         # e.g. NoSuchElementException: Message: Unable to locate element: {"method":"name","selector":"countryName"}
-        
+        print "NoSuchElementException: " + str(ex.args)
     except Exception as ex:
         print "An error occurred whilst trying to retrieve a tariff for " + country
-        print "Message: "+ex.args
+        print "Message: " + str(ex.args)
