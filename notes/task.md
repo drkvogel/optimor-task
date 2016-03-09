@@ -11,7 +11,7 @@ We’re looking for good, readable  Pythonic code, not just a hacked­
 3. Canada, Germany, Iceland, Pakistan, Singapore, South Africa  
 
 Tips: 
-We don’t expect you to have experience with Selenium or other web crawlers beforehand. working at Optimor involves being able to rapidly pick up tools/libraries without formal  training. This task is designed to test that.  
+We don’t expect you to have experience with Selenium or other web crawlers beforehand. working at Optimor involves being able to rapidly pick up tools/libraries without formal training. This task is designed to test that.
 We expect you to make full use of the internet and available documentation. 
 We don’t recommend researching the minutiae of XPath beforehand: you should be able  to consult http://www.w3schools.com/xpath/ during the project itself.  
 We think the task should take 1­1.5 hours, including installing and learning Selenium. 
