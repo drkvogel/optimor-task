@@ -1,6 +1,4 @@
-blah blah
-
-
+Optimor Python Developer Interview Task
 
 I had done this sort of thing before with BeautifulSoup, but Selenium and xpath was new to me.
 

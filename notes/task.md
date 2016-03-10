@@ -14,7 +14,7 @@ Tips:
 We don’t expect you to have experience with Selenium or other web crawlers beforehand. working at Optimor involves being able to rapidly pick up tools/libraries without formal training. This task is designed to test that.
 We expect you to make full use of the internet and available documentation. 
 We don’t recommend researching the minutiae of XPath beforehand: you should be able  to consult http://www.w3schools.com/xpath/ during the project itself.  
-We think the task should take 1­1.5 hours, including installing and learning Selenium. 
+We think the task should take 1­-1.5 hours, including installing and learning Selenium. 
 The countries are actually stored in a JSON file loading and parsing this would be a better real­life solution, but in the context of this task, imagine this doesn’t exist ;)  
 
 If you enjoyed the task, you may be interested in brownie points for:  
