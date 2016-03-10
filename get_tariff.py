@@ -14,27 +14,22 @@ def get_o2_landline_tariff(country, browser):
     url = 'http://international.o2.co.uk/internationaltariffs/calling_abroad_from_uk'
     browser.get(url)
 
-    # select country #countryName //*[@id="countryName"]
     logging.info("find #countryName")
     elem = browser.find_element_by_xpath('//*[@id="countryName"]')
     elem.send_keys(country)
     elem.send_keys(Keys.RETURN)
     time.sleep(0.2)
 
-    # select Pay Monthly #paymonthly //*[@id="paymonthly"]
     logging.info("find #paymonthly")
     elem = browser.find_element_by_xpath('//*[@id="paymonthly"]')
     elem.click()
     time.sleep(0.2)
 
-    # find tariff in #standardRatesTable //*[@id="standardRatesTable"]/tbody/tr[1]/td[2]
     logging.info("find tariff in #standardRatesTable")
     landline = browser.find_element_by_xpath('//*[@id="standardRatesTable"]/tbody/tr[1]/td[2]')
 
     return landline.text
 
-countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
-#countries = ["Canada", "Germany"]
 
 def get_tariff(browser, network_name, call_type, contract_type, country):
     if network_name == 'O2':
@@ -49,19 +44,20 @@ def get_tariff(browser, network_name, call_type, contract_type, country):
 def get_tariffs():
     browser = webdriver.Firefox() # for the purposes of this task; a reallife version would cater for many different browsers
 
+    countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
+
     for country in countries:
         print "Getting landline tariff for " + country
         try:
-            #print "O2's landline tariff for " + country + " is: " + get_o2_landline_tariff(country, 'Firefox')
             print "O2's landline tariff for " + country + " is: " + get_tariff(browser, "O2", "landline", "monthly", country)
         except NoSuchElementException as ex:
-            # e.g. NoSuchElementException: Message: Unable to locate element: {"method":"name","selector":"countryName"}
+            # e.g. Message: Unable to locate element: {"method":"name","selector":"countryName"}
             print "NoSuchElementException: " + ex.message #str(ex.args)
         except Exception as ex:
             print "An error occurred whilst trying to retrieve a tariff for " + country
             print "Message: " + ex.message
-    browser.close()
 
+    browser.close()
 
 if __name__ == "__main__":
     if os.getenv('DEBUGGING'):
