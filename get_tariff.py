@@ -17,6 +17,8 @@ def get_o2_landline_rate(country, browser):
     """
     url = 'http://international.o2.co.uk/internationaltariffs/calling_abroad_from_uk'
     browser.get(url)
+    time.sleep(0.2)
+    assert "International" in browser.title
 
     logging.info("find #countryName")
     elem = browser.find_element_by_xpath('//*[@id="countryName"]')
@@ -55,6 +57,7 @@ def get_rate(browser, network_name, call_type, contract_type, country):
 def get_tariffs():
     """ scrape network providers' websites for rates """
     browser = webdriver.Firefox() # for the purposes of this task; a reallife version would cater for many different browsers
+    time.sleep(0.5) # wait for browser to initialise
 
     countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
 
