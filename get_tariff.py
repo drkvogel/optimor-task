@@ -34,23 +34,24 @@ def get_o2_landline_tariff(country, browser):
 
     return landline.text
 
-#countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
-countries = ["Canada", "Germany"]
+countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
+#countries = ["Canada", "Germany"]
 
 def get_tariff(network_name, browser_name, call_type, contract_type, country):
     if network_name == 'O2':
         pass
     else:
         raise Exception('Network "' + network_name + " not currently handled")
-        
+
     if browser_name == 'Firefox':
         browser = webdriver.Firefox()
     else:
         raise Exception('Browser "' + browser_name + " not currently handled")
     # ... etc
 
-    get_o2_landline_tariff(country, browser)
+    result = get_o2_landline_tariff(country, browser)
     browser.close()
+    return result
 
 def get_tariffs():
     for country in countries:

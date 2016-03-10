@@ -1,0 +1,2 @@
+#!/bin/bash
+DEBUGGING=1 python get_tariff.py
