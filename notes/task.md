@@ -25,7 +25,7 @@ If you enjoyed the task, you may be interested in brownie points for
 Questions 
 If you have questions about the specification above, please email  sam.whitehall@optimorlabs.com    
 Submission Please email code (GitHub/BitBucket repository, preferably) to hrteam@optimorlabs.com. 
-You  may wish to include a comment about how you found the task. 
+You may wish to include a comment about how you found the task. 
 
 http://selenium.googlecode.com/svn/trunk/docs/api/py/index.html#  
 http://international.o2.co.uk/internationaltariffs/calling_abroad_from_uk
