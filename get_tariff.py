@@ -11,6 +11,10 @@ from selenium.common.exceptions import NoSuchElementException
 import time, os, logging
 
 def get_o2_landline_tariff(country, browser):
+    """ Get rate for calling landlines from O2.
+    browser     -- selenium browser object
+    country     -- country name
+    """
     url = 'http://international.o2.co.uk/internationaltariffs/calling_abroad_from_uk'
     browser.get(url)
 
@@ -32,6 +36,13 @@ def get_o2_landline_tariff(country, browser):
 
 
 def get_tariff(browser, network_name, call_type, contract_type, country):
+    """ Scrape a tariff
+    browser         -- selenium browser object
+    network_name    -- name of providers
+    call_type       -- "landline"|"mobile"|"text"
+    contract_type   -- "monthly"|"payAsYouGo"
+    country         -- country name
+    """
     if network_name == 'O2':
         pass
     else:
@@ -42,6 +53,7 @@ def get_tariff(browser, network_name, call_type, contract_type, country):
     return result
 
 def get_tariffs():
+    """ scrape network providers' websites for tariffs """
     browser = webdriver.Firefox() # for the purposes of this task; a reallife version would cater for many different browsers
 
     countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
@@ -61,5 +73,5 @@ def get_tariffs():
 
 if __name__ == "__main__":
     if os.getenv('DEBUGGING'):
-        logging.basicConfig(level = logging.INFO) # logging.DEBUG
+        logging.basicConfig(level=logging.INFO) # logging.DEBUG
     get_tariffs()
