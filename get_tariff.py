@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 import time, os, logging
 
-def get_o2_landline_tariff(country, browser):
+def get_o2_landline_rate(country, browser):
     """ Get rate for calling landlines from O2.
     browser     -- selenium browser object
     country     -- country name
@@ -29,13 +29,13 @@ def get_o2_landline_tariff(country, browser):
     elem.click()
     time.sleep(0.2)
 
-    logging.info("find tariff in #standardRatesTable")
+    logging.info("find rate in #standardRatesTable")
     landline = browser.find_element_by_xpath('//*[@id="standardRatesTable"]/tbody/tr[1]/td[2]')
 
     return landline.text
 
 
-def get_tariff(browser, network_name, call_type, contract_type, country):
+def get_rate(browser, network_name, call_type, contract_type, country):
     """ Scrape a tariff
     browser         -- selenium browser object
     network_name    -- name of providers
@@ -49,24 +49,24 @@ def get_tariff(browser, network_name, call_type, contract_type, country):
         raise Exception('Network "' + network_name + " not currently handled")
     # ... etc
 
-    result = get_o2_landline_tariff(country, browser)
+    result = get_o2_landline_rate(country, browser)
     return result
 
 def get_tariffs():
-    """ scrape network providers' websites for tariffs """
+    """ scrape network providers' websites for rates """
     browser = webdriver.Firefox() # for the purposes of this task; a reallife version would cater for many different browsers
 
     countries = ["Canada", "Germany", "Iceland", "Pakistan", "Singapore", "South Africa"]
 
     for country in countries:
-        print "Getting landline tariff for " + country
+        print "Getting landline rate for " + country
         try:
-            print "O2's landline tariff for " + country + " is: " + get_tariff(browser, "O2", "landline", "monthly", country)
+            print "O2's landline rate for " + country + " is: " + get_rate(browser, "O2", "landline", "monthly", country)
         except NoSuchElementException as ex:
             # e.g. Message: Unable to locate element: {"method":"name","selector":"countryName"}
             print "NoSuchElementException: " + ex.message #str(ex.args)
         except Exception as ex:
-            print "An error occurred whilst trying to retrieve a tariff for " + country
+            print "An error occurred whilst trying to retrieve a rate for " + country
             print "Message: " + ex.message
 
     browser.close()
